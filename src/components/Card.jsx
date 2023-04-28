@@ -11,6 +11,15 @@ const Card = ({ id, iconUri, appTitle, appSize, lastUseDate, isOpen, setNewData,
         findedApp.isOpen =  !(findedApp.isOpen)
         
         setNewData([...newarr,findedApp])
+
+
+
+        // setNewData((oldata)=> {
+        //     let newitem =oldata.find((item)=>item.id ==id )
+        //     newitem.isOpen=!newitem.isOpen
+        // return 
+
+        // })
         console.log(allData)
     }
     
