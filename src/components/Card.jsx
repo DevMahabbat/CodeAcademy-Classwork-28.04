@@ -3,12 +3,17 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 const Card = ({ id, iconUri, appTitle, appSize, lastUseDate, isOpen, setNewData, allData }) => {
     const convertOpen = () => {
         const findedApp = allData.find(item => item.id == id)
+        console.log(findedApp);
         if (!findedApp) {
             return null
         }
-        setNewData(...allData, findedApp.isOpen = true)
+        let newarr = allData.filter(item => item.id != id)
+        findedApp.isOpen =  !(findedApp.isOpen)
+        
+        setNewData([...newarr,findedApp])
         console.log(allData)
     }
+    
 
     return (
         <View style={styles.container}>
@@ -28,8 +33,8 @@ const Card = ({ id, iconUri, appTitle, appSize, lastUseDate, isOpen, setNewData,
                 <View style={styles.buttonContainer}>
                     {
                         isOpen ?
-                            <TouchableOpacity style={styles.button}>
-                                <Text style={styles.buttonText}>OPEN</Text>
+                            <TouchableOpacity onPress={convertOpen} style={styles.button}>
+                                <Text style={styles.buttonText} >OPEN</Text>
                             </TouchableOpacity> : <TouchableOpacity style={styles.button} onPress={convertOpen}>
                                 <Text style={styles.buttonText}>UPDATE</Text>
                             </TouchableOpacity>

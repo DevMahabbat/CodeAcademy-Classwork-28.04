@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const data = [
   {
-    id: 1,
+    id: "1",
     iconUri: 'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
     appTitle: 'Slack',
     appSize: 101,
@@ -13,13 +13,21 @@ const data = [
     isOpen: false
   },
   {
-    id: 2,
+    id: "2",
     iconUri: 'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
     appTitle: 'Slack',
     appSize: 101,
     lastUseDate: 'Used Month Ago',
     isOpen: true
-  }
+  },
+  {
+    id: "3",
+    iconUri: 'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
+    appTitle: 'Slack',
+    appSize: 101,
+    lastUseDate: 'Used Month Ago',
+    isOpen: false
+  },
 ]
 
 export default function App() {
